@@ -1,0 +1,17 @@
+{
+  "name": "fraud_analysis_pipeline",
+  "catalog": "de_workshop",
+  "schema": "labuser15231327_1781170922",
+  "serverless": true,
+  "photon": true,
+  "channel": "CURRENT",
+  "pipeline_type": "WORKSPACE",
+  "continuous": false,
+  "libraries": [
+    {
+      "glob": {
+        "include": "./transformations/**"
+      }
+    }
+  ]
+}
