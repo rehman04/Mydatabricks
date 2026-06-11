@@ -25,6 +25,7 @@
 - [🛠️ Technologies](#️-technologies)
 - [🚀 Getting Started](#-getting-started)
 - [📊 Data Assets](#-data-assets)
+- [🧩 Featured Job & Pipeline](#-featured-job--pipeline)
 
 ---
 
@@ -178,6 +179,26 @@ Demonstration of Databricks Secrets management for secure credential handling.
 3. advanced-data-engineering-with-databricks/
 4. Explore project folders
 ```
+
+---
+
+## 🧩 Featured Job & Pipeline
+
+### `pipelineshifa-job/`
+A packaged export of a Lakeflow Spark Declarative Pipeline and a Databricks Job.
+
+**Contents:**
+* Pipeline config plus transformation source files
+* Job configuration JSON
+* Downstream notebook task
+* README with Mermaid DAG diagrams
+* Screenshot placeholders for pipeline DAG, job DAG, and sample output
+
+**Highlights:**
+* Source stream from `samples.bakehouse.sales_transactions`
+* Streaming table `sales_transactions`
+* Materialized view `sales_stats`
+* Job dependency chain: `salespipeline` → `downstream`
 
 ---
 

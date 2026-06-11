@@ -1,0 +1,30 @@
+{
+  "name": "shifaJOb",
+  "max_concurrent_runs": 1,
+  "queue": {
+    "enabled": true
+  },
+  "performance_target": "PERFORMANCE_OPTIMIZED",
+  "tasks": [
+    {
+      "task_key": "salespipeline",
+      "run_if": "ALL_SUCCESS",
+      "pipeline_task": {
+        "pipeline_id": "ede6e013-812f-4f50-a781-3d129c47334e"
+      }
+    },
+    {
+      "task_key": "downstream",
+      "depends_on": [
+        {
+          "task_key": "salespipeline"
+        }
+      ],
+      "run_if": "ALL_SUCCESS",
+      "notebook_task": {
+        "notebook_path": "./notebooks/downstream.py",
+        "source": "WORKSPACE"
+      }
+    }
+  ]
+}
