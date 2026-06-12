@@ -1,6 +1,5 @@
 <div align="center">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" alt="Databricks Logo" width="300"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" width="280"/>
 
 # 🚀 My Databricks Workspace
 
@@ -8,7 +7,7 @@
 [![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)](https://spark.apache.org)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://en.wikipedia.org/wiki/SQL)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rehman04/Mydatabricks)
+[![Delta Lake](https://img.shields.io/badge/Delta%20Lake-003366?style=for-the-badge&logo=databricks&logoColor=white)](https://delta.io)
 
 *A comprehensive collection of Databricks notebooks, pipelines, and data engineering projects.*
 
@@ -17,7 +16,6 @@
 ---
 
 ## 📋 Table of Contents
-
 - [📖 Overview](#-overview)
 - [📁 Repository Structure](#-repository-structure)
 - [🎓 Learning Paths](#-learning-paths)
@@ -25,15 +23,16 @@
 - [🛠️ Technologies](#️-technologies)
 - [🚀 Getting Started](#-getting-started)
 - [📊 Data Assets](#-data-assets)
-- [🧩 Featured Job & Pipeline](#-featured-job--pipeline)
 
 ---
 
 ## 📖 Overview
 
-This repository contains my complete Databricks workspace — spanning data engineering coursework, real-world analytics projects, and hands-on experiments with Apache Spark, Delta Lake, and the Databricks platform.
+This repository contains my complete **Databricks workspace** — spanning data engineering coursework, real-world analytics projects, and hands-on experiments with **Apache Spark**, **Delta Lake**, and the Databricks Lakehouse Platform.
 
-It covers everything from foundational Spark programming to advanced data engineering patterns including **Auto Loader**, **Delta Live Tables**, **Unity Catalog**, and **MLflow**.
+Topics covered include **Auto Loader**, **Delta Live Tables**, **Unity Catalog**, **MLflow**, fraud detection ML models, geospatial analytics, and more.
+
+> 📓 All notebooks are in **Jupyter format** (`.ipynb`) — they render directly in GitHub with full outputs, charts, and results.
 
 ---
 
@@ -42,28 +41,27 @@ It covers everything from foundational Spark programming to advanced data engine
 ```
 Mydatabricks/
 │
-├── 📚 data-engineering-with-databricks/          # Core DE course content
-├── 📚 advanced-data-engineering-with-databricks/ # Advanced DE techniques
-├── 📚 apache-spark-programming-with-databricks-2.3.1/ # Spark fundamentals
+├── 📚 data-engineering-with-databricks/           # Core DE course
+├── 📚 advanced-data-engineering-with-databricks/  # Advanced DE techniques  
+├── 📚 apache-spark-programming-with-databricks/   # Spark fundamentals
 │
-├── 🔬 Insurance Data quality/                    # Insurance data quality project
-├── 🔬 BD Assess/                                 # Business data assessment
+├── 🔬 BD Assess/                                  # Big Data assessment projects
+│   └── Fraud Detection ML Model.ipynb            # AutoML fraud detection
+├── 🔬 Insurance Data quality/                     # Insurance data quality checks
 ├── 🔬 testinsightvsfinact/                        # Insight vs financial actuals
-├── 🔬 ev json/                                    # EV data JSON ingestion
-├── 🔬 create-pipeline-from-sample-data/           # Pipeline from sample data
+├── 🔬 ev json/                                    # EV JSON ingestion pipeline
+├── 🔬 create-pipeline-from-sample-data/           # Sample data pipeline
 │
-├── 📓 map visualization for bad deliveries.py    # Delivery compliance maps
-├── 📓 demo test json ingestion from s3.py        # S3 JSON ingestion demo
-├── 📓 demoVlmflower.py                           # VLM/MLflow demo
-├── 📓 secrects demo.py                           # Databricks Secrets demo
-├── 📓 Sample job - ingestion task.py             # Sample ingestion job
-├── 📓 Sample job - filtering and reporting task.py # Filtering & reporting
-├── 📓 2025-04-06 - DBFS Example.py              # DBFS usage example
+├── 📓 map visualization for bad deliveries.ipynb  # Geospatial delivery analysis
+├── 📓 demo test json ingestion from s3.ipynb      # S3 JSON ingestion demo
+├── 📓 demoVlmflower.ipynb                         # MLflow / VLM model demo
+├── 📓 secrects demo.ipynb                         # Databricks Secrets usage
+├── 📓 Sample job - ingestion task.ipynb           # Sample ingestion job
+├── 📓 Sample job - filtering and reporting.ipynb  # Filtering & reporting
 │
-├── 🗺️ delivery_compliance_map.html               # Interactive compliance map
-├── 🗺️ non_compliant_deliveries_map.html          # Non-compliant deliveries map
-│
-└── 📊 *.csv                                      # Sample datasets
+├── 🗺️ delivery_compliance_map.html               # Interactive London delivery map
+├── 🗺️ non_compliant_deliveries_map.html          # Non-compliant zones map
+└── 📊 *.csv                                       # Sample datasets
 ```
 
 ---
@@ -71,67 +69,71 @@ Mydatabricks/
 ## 🎓 Learning Paths
 
 ### 🟢 Data Engineering with Databricks
-> *Foundational data engineering concepts on the Databricks Lakehouse Platform*
-
 | Topic | Description |
 |-------|-------------|
 | Delta Lake | ACID transactions, time travel, schema enforcement |
 | Auto Loader | Incremental file ingestion with `cloudFiles` |
 | Delta Live Tables | Declarative pipeline development |
 | Workflow Jobs | Orchestrating multi-task pipelines |
-| Unity Catalog | Data governance and access control |
+| Unity Catalog | Governance, access control & lineage |
 
 ### 🔵 Advanced Data Engineering
-> *Production-grade patterns and best practices*
-
 | Topic | Description |
 |-------|-------------|
 | Change Data Capture | Auto CDC with `APPLY CHANGES INTO` |
 | Incremental Processing | Watermarks and stateful streaming |
 | Performance Tuning | Z-ordering, partitioning, liquid clustering |
-| Testing & Monitoring | Data quality expectations and alerts |
+| Testing & Monitoring | Data quality expectations and alerting |
 
 ### 🟣 Apache Spark Programming
-> *Deep dive into Spark APIs and distributed computing*
-
 | Topic | Description |
 |-------|-------------|
-| Spark SQL | DataFrames, SQL queries, optimizations |
-| Structured Streaming | Real-time data processing |
-| Spark ML | Machine learning pipelines |
-| Performance | Caching, broadcast joins, AQE |
+| Spark SQL | DataFrames, SQL queries, query optimisation |
+| Structured Streaming | Real-time data processing patterns |
+| Spark ML | Machine learning pipelines at scale |
+| Performance | Caching, broadcast joins, Adaptive Query Execution |
 
 ---
 
 ## 🔬 Projects
 
+### 🤖 Fraud Detection ML Model
+> `BD Assess/Big Data Asses Fraud Detection Creating ML Model.ipynb`
+
+End-to-end fraud detection pipeline using Databricks AutoML and MLflow:
+- 🔍 Exploratory analysis on transaction types (fraud vs normal)
+- 🏗️ Feature engineering with **Databricks Feature Store**
+- 🤖 AutoML classification with automatic hyperparameter tuning
+- 📦 Model registration in **Unity Catalog** model registry
+- 🔮 Real-time predictions with schema-aligned inference
+
 ### 🚚 Delivery Compliance Analytics
-**Files:** `map visualization for bad deliveries.py` · `delivery_compliance_map.html` · `non_compliant_deliveries_map.html`
+> `map visualization for bad deliveries.ipynb` · `delivery_compliance_map.html`
 
-Interactive geospatial analysis of delivery compliance across London postcodes. Features:
-- 🗺️ Interactive HTML maps visualising bad delivery zones
-- 📍 Postcode-level compliance scoring
-- 📊 Synthetic delivery dataset generation
+Interactive geospatial analysis of delivery compliance across London postcodes:
+- 🗺️ Interactive Folium HTML maps highlighting non-compliant zones
+- 📍 Postcode-level compliance scoring with real London coordinates
+- 📊 Synthetic delivery dataset for reproducible analysis
 
-### ⚡ EV Data Ingestion
-**Folder:** `ev json/`
+### ⚡ EV Data Ingestion Pipeline
+> `ev json/`
 
-JSON data ingestion pipeline for Electric Vehicle datasets with schema inference and Delta Lake storage.
+End-to-end JSON ingestion pipeline for Electric Vehicle datasets with Delta Lake storage.
 
 ### 🏥 Insurance Data Quality
-**Folder:** `Insurance Data quality/`
+> `Insurance Data quality/`
 
-Data quality framework for insurance datasets — validation rules, anomaly detection, and quality reporting.
+Data quality framework — validation rules, anomaly detection, and quality reporting dashboards.
 
 ### 📈 Business Data Assessment
-**Folder:** `BD Assess/`
+> `BD Assess/`
 
-Business intelligence assessment framework comparing insight data against financial actuals.
+BI assessment framework comparing insight data against financial actuals with automated reporting.
 
-### 🔐 Secrets & Security Demo
-**File:** `secrects demo.py`
+### ☁️ S3 JSON Ingestion Demo
+> `demo test json ingestion from s3.ipynb`
 
-Demonstration of Databricks Secrets management for secure credential handling.
+Demonstrates reading and processing JSON files from AWS S3 into the Databricks Lakehouse.
 
 ---
 
@@ -141,13 +143,13 @@ Demonstration of Databricks Secrets management for secure credential handling.
 
 | Category | Technologies |
 |----------|-------------|
-| **Platform** | Databricks, Apache Spark 3.x |
+| **Platform** | Databricks, Apache Spark 3.x, AWS |
 | **Storage** | Delta Lake, DBFS, Unity Catalog |
 | **Languages** | Python (PySpark), SQL, Scala |
 | **Ingestion** | Auto Loader, Delta Live Tables |
-| **ML** | MLflow, VLM models |
-| **Visualisation** | Folium, HTML maps |
-| **Orchestration** | Databricks Jobs & Workflows |
+| **ML & AI** | MLflow, Databricks AutoML, Feature Store |
+| **Visualisation** | Plotly, Folium, HTML interactive maps |
+| **Orchestration** | Databricks Jobs |
 | **Security** | Databricks Secrets, Unity Catalog RBAC |
 
 </div>
@@ -159,65 +161,42 @@ Demonstration of Databricks Secrets management for secure credential handling.
 ### Prerequisites
 - Databricks workspace (DBR 12.0+ recommended)
 - Unity Catalog enabled
-- Python 3.9+
+- AWS S3 access (for cloud storage demos)
 
-### Import to Databricks
+### Import to Your Databricks Workspace
 
-1. **Clone this repo** into your Databricks workspace:
-   ```
-   Repos → Add Repo → https://github.com/rehman04/Mydatabricks.git
-   ```
+```
+Workspace → Repos → Add Repo
+→ https://github.com/rehman04/Mydatabricks.git
+```
 
-2. **Attach a cluster** — DBR 13.x LTS or Serverless compute
-
-3. **Run a notebook** — start with any folder's `00-Introduction` or `README` notebook
+Then attach a cluster (**DBR 13.x LTS** or Serverless) and open any notebook.
 
 ### Recommended Learning Order
 ```
-1. apache-spark-programming-with-databricks-2.3.1/
-2. data-engineering-with-databricks/
-3. advanced-data-engineering-with-databricks/
-4. Explore project folders
+1️⃣  apache-spark-programming-with-databricks-2.3.1/
+2️⃣  data-engineering-with-databricks/
+3️⃣  advanced-data-engineering-with-databricks/
+4️⃣  BD Assess/  ← Fraud Detection ML project
+5️⃣  Explore remaining project folders
 ```
-
----
-
-## 🧩 Featured Job & Pipeline
-
-### `pipelineshifa-job/`
-A packaged export of a Lakeflow Spark Declarative Pipeline and a Databricks Job.
-
-**Contents:**
-* Pipeline config plus transformation source files
-* Job configuration JSON
-* Downstream notebook task
-* README with Mermaid DAG diagrams
-* Screenshot placeholders for pipeline DAG, job DAG, and sample output
-
-**Highlights:**
-* Source stream from `samples.bakehouse.sales_transactions`
-* Streaming table `sales_transactions`
-* Materialized view `sales_stats`
-* Job dependency chain: `salespipeline` → `downstream`
 
 ---
 
 ## 📊 Data Assets
 
-| File | Description | Size |
-|------|-------------|------|
-| `synthetic_delivery_data.csv` | Synthetic London delivery records | ~47 MB |
-| `real_london_postcodes_data.csv` | Real London postcode data | — |
-| `real_london_postcodes_lat_long.csv` | Postcode lat/long coordinates | — |
+| File | Description |
+|------|-------------|
+| `synthetic_delivery_data.csv` | Synthetic London delivery records |
+| `real_london_postcodes_data.csv` | Real UK postcode reference data |
+| `real_london_postcodes_lat_long.csv` | Postcode latitude/longitude coordinates |
 
 ---
 
 <div align="center">
 
-**⭐ If you find this useful, give it a star!**
+⭐ **If you find this helpful, please give it a star!**
 
-Made with ❤️ using [Databricks](https://databricks.com)
-
-![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=rehman04.Mydatabricks)
+Made with ❤️ using [Databricks](https://databricks.com) on AWS
 
 </div>
