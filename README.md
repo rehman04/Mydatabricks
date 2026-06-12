@@ -61,7 +61,10 @@ Mydatabricks/
 │
 ├── 🗺️ delivery_compliance_map.html               # Interactive London delivery map
 ├── 🗺️ non_compliant_deliveries_map.html          # Non-compliant zones map
-└── 📊 *.csv                                       # Sample datasets
+├── 📊 *.csv                                       # Sample datasets
+├── 🌡️ Zerobus-IoT-Lab/                            # IoT data ingestion via Zerobus SDK
+│   └── send_city_iot_data.ipynb                  # Send city temperature readings to Delta table
+│
 ```
 
 ---
@@ -129,6 +132,17 @@ Data quality framework — validation rules, anomaly detection, and quality repo
 > `BD Assess/`
 
 BI assessment framework comparing insight data against financial actuals with automated reporting.
+
+
+### 🌡️ Zerobus IoT Lab — City Temperature Ingestion
+> `Zerobus-IoT-Lab/send_city_iot_data.ipynb`
+
+Real-time IoT data ingestion using the **Zerobus Ingest SDK** (gRPC):
+- 📡 Sends city temperature readings to `ops_data.zerobus.measurements` Delta table
+- 🔐 OAuth-based authentication via service principal (credentials from UC config table)
+- 🆔 Each submission generates a unique UUID record
+- ✅ Includes verification query to confirm data landed in the target table
+- 🛠️ Uses Databricks widgets for interactive city/temperature/comment input
 
 ### ☁️ S3 JSON Ingestion Demo
 > `demo test json ingestion from s3.ipynb`
